@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  youtranscript_api:
+    container_name: youtranscript_api
+    build: .
+    networks:
+      - nginx_network
+
+  nginx:
+    image: nginx:1.13
+    ports:
+      - 8001:8001
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - nginx_network
+    depends_on:
+      - youtranscript_api
+
+networks:
+  nginx_network:
+    driver: bridge

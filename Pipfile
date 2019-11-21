@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+gunicorn = "==19.9.0"
+flask = "==1.1.1"
+youtube-transcript-api = "==0.1.9"
+flask-jwt = "*"
+json-logging = "*"
+
+[dev-packages]
+tox = "==3.14.0"
+ipython = "==7.8.0"
+fabric = "==2.4"
+coverage = "==4.5.4"
+
+[requires]
+python_version = "3.6"
